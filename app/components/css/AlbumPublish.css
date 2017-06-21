@@ -1,0 +1,446 @@
+:local .albumPublishBox{
+	margin: 156px 0 0 0;
+	float: left;
+	position: absolute;
+	right: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+}
+/*标题*/
+:local .albumPublishTitleBox{
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ddd;
+}
+:local .albumPublishTitleBox a{
+	display: block;
+	height: 47px;
+	width: 100px;
+	text-align: center;
+	color: #545454;
+	float: left;
+	cursor: pointer;
+}
+:local .albumPublishTitleBox a:hover{
+	border-bottom: 3px solid #2EA56B;
+}
+/*标题高亮*/
+:local .highLight{
+	border-bottom: 3px solid #2EA56B;
+}
+
+/*发表文章*/
+:local .publishArticleBox{
+	padding: 20px;
+	color: #9E9E9E;
+}
+
+/*多选按钮、单选按钮*/
+:local .checkbox{width:300px;height:35px;line-height:35px;margin-right: 20px;cursor: pointer;}
+:local .checkbox label {font-size:12px;cursor:pointer;}
+:local .checkbox i {font-size:12px;font-style:normal;display:inline-block;width:12px;height:12px;text-align:center;line-height:12px;color:#fff;vertical-align:middle;margin:-2px 2px 1px 0px;border:#2489c5 1px solid;}
+:local .checkbox input[type="checkbox"],:local .checkbox input[type="radio"] {display:none;}
+:local .checkbox input[type="radio"] + i {border-radius:7px;}
+:local .checkbox input[type="checkbox"]:checked + i,:local .checkbox input[type="radio"]:checked + i {background:#2489c5;}
+:local .checkbox input[type="checkbox"]:disabled + i,:local .checkbox input[type="radio"]:disabled + i {border-color:#ccc;}
+:local .checkbox input[type="checkbox"]:checked:disabled + i,:local .checkbox input[type="radio"]:checked:disabled + i {background:#ccc;}
+
+/*选择框*/
+.select{
+	list-style: none;
+	width: 280px;
+	height: 35px;
+	border:1px solid #ddd;
+	border-radius: 3px;
+	padding: 0 10px;
+	position: relative;
+	background: #fff;
+	display: inline-block;
+	cursor: pointer;
+}
+.select li{
+	height: 35px;
+	line-height: 35px;
+}
+.select:after{
+	position:absolute;
+	z-index:1;
+	top:50%;
+	right:10px;
+	margin-top:-3px;
+	display:block;
+	width:0;
+	height:0;
+	border-style:solid;
+	border-width:5px 5px 0 5px;
+	border-color:#2489c5 transparent transparent transparent;
+	content:"";
+} 
+.list{
+	display: none;
+}
+.option{
+	width: 300px;
+	border: 1px solid #ddd;
+	position: absolute;
+	left: -1px;
+	background: #fff;
+	z-index: 2;
+}
+.option li{
+	width: 280px;
+	padding: 0 10px;
+}
+.option li:hover{
+	background: #2489c5;
+	color: #fff;
+} 
+
+/*标题*/
+:local .articleTitleInput{
+	height: 50px;
+	line-height: 50px;
+	border:1px solid #ddd;
+	padding: 0 20px;
+}
+:local .articleTitleInput input{
+	font-size: 20px;
+	color: #545454;
+	float: left;
+	width: 90%;
+	border: none;
+	outline: none;
+	height: 50px;
+	line-height: 50px;
+
+}
+:local .articleTitleInput span{
+	font-size: 14px;
+	color: #A1A1A1;
+	float: left;
+	width: 10%;
+	display: block;
+	text-align: right;
+}
+/*内容*/
+:local .articleContentInput{
+	height: 360px;
+	border: 1px solid #ddd;
+}
+:local .articleContentInput textarea{
+	height: 340px;
+	border: none;
+	outline: none;
+	width: 100%;
+	padding:10px 0;
+	text-indent: 20px;
+}
+/**/
+:local .articleSelect{
+	height: 50px;
+	line-height: 50px;
+}
+:local .articleSelect input{
+	height: 35px;
+	line-height: 35px;
+	width: 280px;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	outline: none;
+}
+:local .label{
+	height: 50px;
+	line-height: 50px;
+	width: 100px;
+	display: block;
+	float: left;
+	font-size: 16px;
+	color: #545454;
+}
+/*提交按钮*/
+:local .btn{
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	border: none;
+	color: #FFF;
+	text-align: center;
+	background: #2EA56B;
+	border-radius: 5px;
+	margin-left: 100px;
+	margin-right: 20px;
+	display: inline-block;
+}
+:local .disabled{
+	color: #A9A9A9;
+	background: #ddd;
+	margin-left: 0;
+	margin-right: 0;
+}
+/*上传封面*/
+:local .uploadCoverBox{
+	margin-left: 100px;
+	width: 183px;
+	height: 126px;
+	line-height: 126px;
+	text-align: center;
+	background: #F0F1F4;
+	font-size: 25px;
+	color: #D3D5D9;
+	cursor: pointer;
+}
+
+/*新建相册标题*/
+:local .albumTitleInput{
+	position: relative;
+	overflow: hidden;
+}
+:local .albumTitleInput input{
+	height: 35px;
+	line-height: 35px;
+	font-size: 14px;
+	position: absolute;
+	left: 100px;
+	right: 50px;
+	top: 7px;
+	outline: none;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	padding: 0 10px;
+	width: 680px;
+}
+:local .albumTitleInput span{
+	width: 50px;
+	float: right;
+	margin-top: 15px;
+}
+/*发布相册init*/
+:local .publishPicInitBox{
+	height: 320px;
+	border-bottom: 1px solid #ddd;
+	text-align: center;
+	margin-bottom: 20px;
+}
+:local .publishPicInitBox img{
+	display: block;
+	margin: 0 auto 20px auto;
+}
+:local .addPic{
+	margin:0;
+}
+
+/*发布相册图片显示列表*/
+:local .publishPicListBox{
+	overflow: hidden;
+	border-bottom: 1px solid #E8E8Ea;
+	margin-bottom: 10px;
+}
+:local .publishPicListBox a{
+	margin:10px 0;
+}
+:local .picListBox{
+	padding: 20px;
+	line-height: 88px;
+	background: #FAFAFA;
+	position: relative;
+	text-align: right;
+}
+:local .picListBox img{
+	width: 128px;
+	height: 88px;
+	float: left;
+	margin-right: 20px;
+}
+:local .picListBox textarea{
+	width: 623px;
+	height: 76px;
+	float: left;
+	margin-right: 20px;
+	border: 1px solid #E8E8EA;
+	padding: 5px;
+	color: #545454;
+}
+:local .picListBox i{
+	font-size: 20px;
+	margin-left: 30px;
+	cursor: pointer;
+}
+
+/*专辑*/
+:local .publishAlbumBox{
+	float: left;
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+}
+:local .publishAlbumListBox{
+	padding: 20px 20px 20px 199px;
+	background: #eee;
+	color: #A1A1A1;
+	overflow: hidden;
+	margin:0 20px;
+	border-bottom: 1px solid #FAFAFA;
+	position: relative;
+	height: 86px;
+}
+:local .publishAlbumListBox img{
+	width: 169px;
+	height: 86px;
+	float: left;
+	margin-left: -179px;
+}
+:local .publishAlbumListBox p{
+	font-size: 16px;
+	color: #545454;
+	margin-bottom: 10px;
+}
+:local .publishAlbumListBox span{
+	display: block;
+}
+:local .publishAlbumListBox>label{
+	position: absolute;
+	top: 57px;
+	right: 20px;
+}
+:local .albumListActionBox{
+	position: absolute;
+	top: 0;
+	right: 20px;
+	width: 80px;
+	height: 126px;
+	line-height: 126px;
+	text-align: right;
+	font-size: 20px;
+}
+:local .albumListActionBox i{
+	margin-left: 15px;
+	cursor: pointer;
+}
+:local .addAlbum{
+	margin: 20px 0 0 20px; 
+}
+
+/*添加专辑*/
+:local .addAlbumBoxBg{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 30;
+}
+:local .addAlbumBox{
+	width: 632px;
+	height: 265px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin:-133px 0 0 -316px;
+	background: #fff;
+	border-radius: 5px;
+}
+:local .addAlbumBox>span{
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: #545454;
+	padding: 0 20px 0 30px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+:local .addAlbumBox i{
+	margin-top: 15px;
+}
+:local .addAlbumBox>span:after{
+	display: block;
+	content: '';
+	width:90px;
+	height: 3px;
+	background: #2EA56B;
+	position: absolute;
+	top: 50px;
+	left: 20px;
+}
+:local .addAlbumForm{
+	background: #F4F5F6;
+	overflow: hidden;
+}
+:local .addAlbumInput{
+	width: 592px;
+	height: 37px;
+	line-height: 37px;
+	margin:20px 20px 20px 20px;
+}
+:local .addAlbumInput label{
+	width: 70px;
+	height: 37px;
+	line-height: 37px;
+	display: block;
+	float: left;
+}
+:local .addAlbumInput input{
+	width: 470px;
+	height: 37px;
+	line-height: 37px;
+	display: block;
+	float: left;
+	border:1px solid #eee;
+	border-radius: 5px;
+	padding: 0 10px;
+	outline: none;
+}
+:local .btnBox{
+	background: #fff;
+	padding: 20px 0; 
+}
+:local .btnBox a{
+}
+
+/*相册编辑*/
+:local .albumEditForm{
+	position: absolute;
+	top: 20px;
+	right: 60px;
+	bottom: 20px;
+	left: 199px;
+	color: #545454;
+	z-index: 20;
+}
+:local .albumEditInput{
+	height: 37px;
+	line-height: 37px;
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+:local .last{
+	margin-bottom: 0;
+}
+:local .albumEditInput label{
+	height: 37px;
+	line-height: 37px;
+	width: 70px;
+	float: left;
+}
+:local .albumEditInput input{
+	height: 35px;
+	line-height: 35px;
+	width: 280px;
+	float: left;
+	border:1px solid #eee;
+	border-radius: 5px;
+	outline: none;
+	padding: 0 10px;
+}
+:local .albumEditBtn{
+	position: absolute;
+	top: 35px;
+	right: 0;
+	cursor: pointer;
+
+}

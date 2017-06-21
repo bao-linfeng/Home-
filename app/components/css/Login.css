@@ -1,0 +1,206 @@
+:local .loginbg{
+	width: 100%;
+	height: 100%;
+	background: url('../../../build/images/loginBg.png') 50% 50% no-repeat;
+	background-size: cover;
+	background-color: #fff;
+	position:relative;
+	z-index: 30;
+}
+:local .loginbg>img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -85px;
+	margin-top: -245px;
+}
+:local .loginBox{
+	background: #fff;
+	width: 288px;
+	height: 228px;
+	padding:50px 110px;
+	border-radius: 5px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	margin-top: -164px;
+	margin-left: -254px;
+	font-size: 14px;
+}
+:local .loginTitle{
+	font-size: 16px;
+	display: block;
+	text-align: center;
+	width: 188px;
+	background: #fff;
+	position: relative;
+	margin-left: 50px;
+	top: 8px;
+	color: #555;
+}
+:local .line{
+	width: 100%;
+	height: 35px;
+	border-top: 1px solid #ddd;
+}
+:local .inputI{
+	width: 286px;
+	height: 35px;
+	border:1px solid #999;
+	border-radius: 4px;
+	margin-bottom: 10px;
+	color: #c1c1c1;
+}
+:local .inputI label{
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	display: block;
+	float: left;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+:local .inputI input{
+	width: 251px;
+	height: 35px;
+	border:none;
+	float: left;
+	outline: none;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+:local .submit{
+	width: 100%;
+	margin-top:25px;
+	margin-bottom:5px;
+	height: 39px;
+	line-height: 39px;
+	border-radius: 4px;
+	border:none;
+	background: #2EA56B;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	display: block;
+	cursor: pointer;
+}
+:local .loginT a{
+	color: #555;
+}
+:local .loginT span{
+	color: #979797;
+	margin-left: 65px;
+}
+
+/*忘记密码*/
+:local .rememberPassword{
+	font-size: 14px;
+	color: #979797;
+	display: block;
+	text-align: right;
+}
+
+/*发送邮件提示*/
+:local .sendEmailbg{
+	position: fixed;
+	top: 0;
+	right:0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	display: none;
+}
+:local .sendEmailBox{
+	position: absolute;
+	width: 596px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -298px;
+	background: #fff;
+	color: #555;
+	text-align: right;
+}
+:local .sendEmailBox span{
+	display: block;
+	padding:16px 26px;
+	font-size: 18px;
+	color: #555;
+	text-align: left;
+}
+.fa-close{
+	float: right;
+	font-size: 24px;
+	color: #c7c7c7;
+	cursor: pointer;
+}
+:local .sendEmailBox p{
+	padding:30px 26px;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	text-align: left;
+}
+:local .lookEmail{
+	color: #2EA56B;
+}
+:local .btn{
+	width: 100px;
+	height: 39px;
+	line-height: 39px;
+	border-radius: 4px;
+	border:none;
+	background: #2EA56B;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	margin-top: 10px;
+	margin-right: 26px;
+}
+
+/*重置密码*/
+:local .resetPasswordOkTips{
+	float: left;
+	font-size: 20px;
+}
+
+/*重置密码成功*/
+:local .resetPasswordOkbg{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	color: #555;
+	position: relative;
+}
+:local .resetPasswordOkBox{
+	width: 300px;
+	height: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -200px;
+}
+:local .resetPasswordOkBox span{
+	display: block;
+	width: 300px;
+	padding:10px 0;
+	border-bottom: 1px solid #ddd;
+	margin:40px auto 10px auto;
+}
+:local .resetPasswordOkBox a{
+	display: block;
+	color: #2EA56B;
+	font-size: 14px;
+}
+
+/*注册*/
+:local .registerBox{
+	height: 275px;
+}
+:local .registerT{
+	text-align: right;
+}

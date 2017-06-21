@@ -1,0 +1,56 @@
+:local .bolgPublish{
+	width: 600px;
+	margin:50px auto;
+	background: #fff;
+	padding:20px;
+}
+:local .title{
+	height: 20px;
+	line-height: 20px;
+	color: #999;
+	font-size: 14px;
+	text-align: right;
+	margin-bottom: 5px;
+}
+:local .title a{
+	color: #0088c0;
+}
+:local .tips{
+	display: none;
+	color: #f00;
+	font-size: 12px;
+}
+:local .tips b{
+	font-size: 14px;
+	color: #f90;
+}
+:local .InputContent{
+	font-size: 14px;
+	color: #999;
+	text-align: right;
+}
+:local .InputContent textarea{
+	width: 580px;
+	border:1px solid #ddd;
+	height: 100px;
+	outline: none;
+	padding: 10px;
+}
+:local .btn{
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	background: #0088c0;
+	border-radius: 3px;
+	color: #fff;
+	border:none;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 10px;
+	cursor: pointer;
+}
+:local .disabled{
+	background: #eee;
+	color: #fff;
+	cursor: default;
+}
