@@ -3,6 +3,10 @@ import {Router, Route, Link} from 'react-router-dom';
 import style from './css/AlbumPublish.css';
 import $ from 'jquery';
 
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
+
 const genealogy=['亲情相册','日记','大学生活','黄山游记'];
 
 class AlbumPublish extends React.Component{
@@ -14,14 +18,20 @@ class AlbumPublish extends React.Component{
             volumeNumber:'亲情相册',
             albumPublishTitleLength:0,
             albumPublishCover:false,
+            albumArticlePublishCover:false,
             publishPicInitState:false,
             AlbumAddState:false,
-            albumEditState:false
+            albumEditState:false,
+            startDate:moment(),
+            albumStartDate:moment()
         };
     }
 
     componentDidMount(){
-
+        CKEDITOR.replace('albumPublishTextarea',{
+            height: 220
+        });
+        // laydate({elem: '#articlePublishTime',istime: true, format: 'YYYY-MM-DD hh:mm:ss'});
     }
 
     handleAlbumPublishTitleClick(e){
@@ -42,12 +52,13 @@ class AlbumPublish extends React.Component{
     }
 
     handleCoverShow(){
+        this.setState({albumArticlePublishCover: !this.state.albumArticlePublishCover});
+        
+    }
+    handleAlbumCoverShow(){
         this.setState({albumPublishCover: !this.state.albumPublishCover});
     }
-    handleCoverHide(){
-        this.setState({albumPublishCover: !this.state.albumPublishCover});
-    }
-
+    
     handlePublishPicInitHide(){
         this.setState({publishPicInitState: !this.state.publishPicInitState});
     }
@@ -58,6 +69,27 @@ class AlbumPublish extends React.Component{
 
     handleAlbumEdit(){
         this.setState({albumEditState: !this.state.albumEditState});
+    }
+
+    handlePicturePreview(e,Img){
+        var prevDiv = document.getElementById(Img);  
+         if (e.target.files && e.target.files[0]){  
+             var reader = new FileReader();  
+             reader.onload = function(evt){  
+                 prevDiv.innerHTML = '<img src="' + evt.target.result + '" />';  
+                }    
+             reader.readAsDataURL(e.target.files[0]);  
+        }else{  
+             prevDiv.innerHTML = '<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + e.target.value + '\'"></div>';  
+        }  
+    }
+
+    handleDateChange(date) {
+        this.setState({startDate: date});
+    }
+
+    handleAlbumDateChange(date){
+        this.setState({albumStartDate: date});
     }
 
 	render(){
@@ -78,17 +110,19 @@ class AlbumPublish extends React.Component{
                                     <span>{this.state.albumPublishTitleLength}/50</span>
                                 </div>
                                 <div className={style.articleContentInput}>
-                                    <textarea></textarea>
+                                    <textarea name="albumPublishTextarea"></textarea>
                                 </div>
                                 <div className={style.articleSelect}>
                                     <label className={style.label}>封面</label>
-                                    <label className={style.checkbox}><input type="radio" name="cover" checked={this.state.albumPublishCover} onClick={(e)=>this.handleCoverShow(e)} /><i>✓</i>设置封面</label>
-                                    <label className={style.checkbox}><input type="radio" name="cover" checked={!this.state.albumPublishCover} onClick={(e)=>this.handleCoverHide(e)} /><i>✓</i>自动</label>
+                                    <label className={style.checkbox}><input type="radio" name="cover" checked={this.state.albumArticlePublishCover} onClick={(e)=>this.handleCoverShow(e)} /><i>✓</i>设置封面</label>
+                                    <label className={style.checkbox}><input type="radio" name="cover" checked={!this.state.albumArticlePublishCover} onClick={(e)=>this.handleCoverShow(e)} /><i>✓</i>自动</label>
                                 </div>
                                 {
-                                    !this.state.albumPublishCover ? null :
-                                        <div className={style.uploadCoverBox}>
+                                    !this.state.albumArticlePublishCover ? null :
+                                        <div className={style.uploadCoverBox} id="addAlbumCover">
                                             <i className="fa fa-plus"></i>
+                                            <input type="file" id="PicturePreviewInput" onChange={(e)=>this.handlePicturePreview(e,'albumArticleCoverBox')} /> 
+                                            <div id="albumArticleCoverBox"></div> 
                                         </div>
                                 }
                                 <div className={style.articleSelect}>
@@ -126,7 +160,7 @@ class AlbumPublish extends React.Component{
                                 </div>
                                 <div className={style.articleSelect}>
                                     <label className={style.label}>时间</label>
-                                    <input type="text" name="publishTime" id="publishTime" />
+                                    <DatePicker dateFormat="YYYY/MM/DD HH:mm:ss" selected={this.state.startDate} onChange={(e)=>this.handleDateChange(e)} className={style.datePicker} />
                                 </div>
                                 <div className={style.articleSelect}>
                                     <a className={style.btn}>发表</a>
@@ -144,7 +178,7 @@ class AlbumPublish extends React.Component{
                                 this.state.publishPicInitState ? null :
                                     <div className={style.publishPicInitBox}>
                                         <img src="./images/newPicAlbum.png" />
-                                        <a className={style.btn+' '+style.addPic} onClick={(e)=>this.handlePublishPicInitHide(e)}>添加照片</a>
+                                        <a className={style.btn+' '+style.addPic} onClick={(e)=>this.handlePublishPicInitHide(e)}><input type="file" />添加照片</a>
                                     </div>
                             }
                             {
@@ -157,7 +191,7 @@ class AlbumPublish extends React.Component{
                                         <i className="fa fa-trash"></i>
                                         <i className="fa fa-navicon"></i>
                                     </div>
-                                    <a className={style.btn+' '+style.addPic}>添加照片</a>
+                                    <a className={style.btn+' '+style.addPic}><input type="file" />添加照片</a>
                                 </div>
                             }
                                 <div className={style.albumTitleInput}>
@@ -167,13 +201,15 @@ class AlbumPublish extends React.Component{
                                 </div>
                                 <div className={style.articleSelect}>
                                     <label className={style.label}>封面</label>
-                                    <label className={style.checkbox}><input type="radio" name="cover" checked={this.state.albumPublishCover} onClick={(e)=>this.handleCoverShow(e)} /><i>✓</i>设置封面</label>
-                                    <label className={style.checkbox}><input type="radio" name="cover" checked={!this.state.albumPublishCover} onClick={(e)=>this.handleCoverHide(e)} /><i>✓</i>自动</label>
+                                    <label className={style.checkbox}><input type="radio" name="cover" checked={this.state.albumPublishCover} onClick={(e)=>this.handleAlbumCoverShow(e)} /><i>✓</i>设置封面</label>
+                                    <label className={style.checkbox}><input type="radio" name="cover" checked={!this.state.albumPublishCover} onClick={(e)=>this.handleAlbumCoverShow(e)} /><i>✓</i>自动</label>
                                 </div>
                                 {
                                     !this.state.albumPublishCover ? null :
                                         <div className={style.uploadCoverBox}>
                                             <i className="fa fa-plus"></i>
+                                            <input type="file" onChange={(e)=>this.handlePicturePreview(e,'albumCoverBox')} /> 
+                                            <div id="albumCoverBox"></div> 
                                         </div>
                                 }
                                 <div className={style.articleSelect}>
@@ -211,7 +247,7 @@ class AlbumPublish extends React.Component{
                                 </div>
                                 <div className={style.articleSelect}>
                                     <label className={style.label}>时间</label>
-                                    <input type="text" name="publishTime" id="publishTime" />
+                                    <DatePicker dateFormat="YYYY/MM/DD" selected={this.state.albumStartDate} onChange={(e)=>this.handleAlbumDateChange(e)} className={style.datePicker} />
                                 </div>
                                 <div className={style.articleSelect}>
                                     <a className={style.btn}>发表</a>
@@ -248,7 +284,9 @@ class AlbumPublish extends React.Component{
                                         <div className={style.albumEditInput+' '+style.last}>
                                             <label>分类</label>
                                             <ul className="select">
-                                                <li className="show" onClick={(e) => this.handleToggleSelect(e)}>{this.state.volumeNumber}</li>
+                                                <li className="show" onClick={(e) => this.handleToggleSelect(e)}>
+                                                    {this.state.volumeNumber}
+                                                </li>
                                                 {
                                                     !this.state.selectStatus ? null:
                                                     <li>

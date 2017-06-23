@@ -1,0 +1,63 @@
+:local .userInfoBox{
+	float: left;
+	position: absolute;
+	right: 0;
+	left: 240px;
+	bottom: 0;
+	top: 156px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+}
+:local .userInfoTitleBox{
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 3px solid #2EA56B;
+	text-align: center;
+	margin-left: 20px;
+}
+:local .userInfoEditBox{
+	border-top: 1px solid #eee;
+	padding: 20px;
+}
+:local .userInfoEditBox a{
+	width: 300px;
+	height: 35px;
+	border: none;
+	border-radius: 5px;
+	line-height: 35px;
+	text-align: center;
+	background: #2EA56B;
+	color: #fff;
+	display: block;
+}
+:local .userInfoInputGroup{
+	width: 300px;
+	height: 35px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	line-height: 35px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+:local .userInfoInputGroup label{
+	width: 79px;
+	height: 35px;
+	line-height: 35px;
+	display: block;
+	float: left;
+	border-right: 1px solid #eee;
+}
+:local .userInfoInputGroup input{
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+	border: none;
+	display: block;
+	float: left;
+	outline: none;
+	padding: 0 10px;
+	border-radius: 0 5px 5px 0;
+}

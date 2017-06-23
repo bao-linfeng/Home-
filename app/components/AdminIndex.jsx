@@ -13,22 +13,22 @@ class AdminIndex extends React.Component{
 	render(){
 	    return (
             <div className={style.adminContentBox}>
-                <div className={style.adminContentListBox+' '+style.adminContentListEditBox}>
+                <Link to="/AlbumPublish" className={style.adminContentListBox+' '+style.adminContentListEditBox}>
                     <i className="fa fa-edit"></i>
                     <p>发布相册</p>
-                </div>
-                <div className={style.adminContentListBox}>
+                </Link>
+                <Link to="/userManage" className={style.adminContentListBox}>
                     <span>23</span>
                     <p>新增用户数</p>
-                </div>
-                <div className={style.adminContentListBox}>
+                </Link>
+                <Link to="/userNewManage" className={style.adminContentListBox}>
                     <span>1370</span>
                     <p>用户总数</p>
-                </div>
-                <div className={style.adminContentListBox+' '+style.last}>
+                </Link>
+                <Link to="/AlbumManage" className={style.adminContentListBox+' '+style.last}>
                     <span>34566</span>
                     <p>累计相册篇数</p>
-                </div>
+                </Link>
                 <div className={style.NewAlbumListBox}>
                     <div className={style.NewAlbumListTitle}>
                         <span>最新相册</span>

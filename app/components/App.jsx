@@ -7,6 +7,9 @@ import Login from './Login.jsx';
 import Register from './Register.jsx';
 import ResetPassword from './ResetPassword.jsx';
 import AlbumPublish from './AlbumPublish.jsx';
+import UserManage from './UserManage.jsx';
+import UserNewManage from './UserNewManage.jsx';
+import UserInfo from './UserInfo.jsx';
 import $ from 'jquery';
 
 const url='https://api.github.com/users/octocat/gists';
@@ -15,7 +18,7 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            
+            leftListState:'/'
         };
     }
 
@@ -45,7 +48,7 @@ class App extends React.Component{
     }
 
     handleLeftListActive(e){
-        this.setState({leftListState:e.currentTarget.value})
+        this.setState({leftListState:e.target.href.substring(21)})
     }
 
 	render(){
@@ -53,20 +56,20 @@ class App extends React.Component{
         <Router>
 	        <div className={style.adminBox}>
                 <div className={style.adminLeftBox}>
-                    <a href="" className={style.userInfo}>
+                    <Link to="/userInfo" className={style.userInfo}>
                         <img src="./images/photo.png" alt="头像" />
                         <span>{this.state.username}</span>
-                    </a>
+                    </Link>
                     <ul className={style.adminNavBox}>
-                        <li onClick={(e) => this.handleLeftListActive(e)} value='1'><Link to="/" className={this.state.leftListState == 1 ? style.active : null}><i className="fa fa-home"></i>首页</Link></li>
+                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/" className={this.state.leftListState == '/' ? style.active : null}><i className="fa fa-home"></i>首页</Link></li>
                         <li><a onClick={(e)=>this.handleManageToggle(e)}>
                             <i className="fa fa-pie-chart"></i>管理</a>
                             {
                                 this.state.manageState ? null :
                                     <ul className={style.adminNavListBox}>
-                                        <li><a href="">用户管理</a></li>
-                                        <li onClick={(e) => this.handleLeftListActive(e)} value='3'><Link to="/AlbumPublish" className={this.state.leftListState == 3 ? style.active : null}>相册发布</Link></li>
-                                        <li onClick={(e) => this.handleLeftListActive(e)} value='4'><Link to="/AlbumManage" className={this.state.leftListState == 4 ? style.active : null}>相册管理</Link></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/userManage" className={this.state.leftListState == "/userManage" ? style.active : null}>用户管理</Link></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/AlbumPublish" className={this.state.leftListState == "/AlbumPublish" ? style.active : null}>相册发布</Link></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/AlbumManage" className={this.state.leftListState == "/AlbumManage" ? style.active : null}>相册管理</Link></li>
                                         <li><a href="">H5活动管理</a></li>
                                         <li><a href="">微习惯管理</a></li>
                                         <li><a href="">早安问候管理</a></li>
@@ -119,6 +122,9 @@ class App extends React.Component{
                 <Route path="/Register" exact component={Register} />
                 <Route path="/resetPassword" exact component={ResetPassword} />
                 <Route path="/albumPublish" exact component={AlbumPublish} />
+                <Route path="/userManage" exact component={UserManage} />
+                <Route path="/userNewManage" exact component={UserNewManage} />
+                <Route path="/userInfo" exact component={UserInfo} />
             </div>
         </Router>
 	    )

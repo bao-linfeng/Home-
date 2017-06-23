@@ -171,7 +171,7 @@ class AlbumManage extends React.Component{
                 <div className={style.pendingStatus}>
                     <a className={this.state.lookState == '全部相册' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>全部相册</a>
                     <a className={this.state.lookState == '我发布的' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>我发布的</a>
-                    <a className={this.state.lookState == '精选自荐待审核' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>精选自荐待审核</a>
+                    <a className={this.state.lookState == '精选审核' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>精选审核</a>
                     <a className={this.state.lookState == '精选列表' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>精选列表</a>
                     <a className={this.state.lookState == '自荐失败' ? style.highLight :null} onClick={(e) => this.handleLook(e)}>自荐失败</a>
                     {
@@ -232,7 +232,7 @@ class AlbumManage extends React.Component{
                 }
             {/*相册待审核界面*/}
                 {
-                    this.state.lookState == '精选自荐待审核' ? 
+                    this.state.lookState == '精选审核' ? 
                         <ul className={style.pendingList}>
                             <li className={style.pendingListTitle}>
                                 <span className={style.checkBox}><label className="checkbox"><input type="checkbox" onClick={(e)=>this.handleCheckboxClick(e)} /><i>✓</i></label></span>

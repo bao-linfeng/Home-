@@ -160,11 +160,12 @@
 	border-radius: 4px;
 	color: #BAB8B8;
 	cursor: pointer;
+	display: block;
 }
 :local .last{
 	margin-right: 0;
 }
-:local .adminContentListEditBox:hover{
+:local .adminContentListBox:hover{
 	color: #fff;
 	background: #1295DB;
 }
@@ -181,10 +182,10 @@
 	margin: 20px 0 5px 0;
 	display: block;
 }
-:local .adminContentListEditBox:hover i{
+:local .adminContentListBox:hover i{
 	color: #fff;
 }
-:local .adminContentListEditBox:hover span{
+:local .adminContentListBox:hover span{
 	color: #fff;
 }
 :local .adminContentListBox p{

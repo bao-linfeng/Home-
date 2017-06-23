@@ -1,0 +1,52 @@
+:local .userManageBox{
+	margin: 156px 0 0 0;
+	float: left;
+	position: absolute;
+	right: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+}
+:local .userManageTitleBox{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-bottom: 1px solid #eee;
+}
+:local .userManageTitleBox a{
+	display: block;
+	width: 100px;
+	text-align: center;
+	color: #545454;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+:local .userManageTitleBox a:hover{
+	border-bottom: 3px solid #2489c5;
+}
+:local .userManageTitleBox a.active{
+	border-bottom: 3px solid #2489c5;
+}
+:local .userAllListBox{
+	padding: 20px 20px 20px 92px;
+	border-bottom: 1px solid #eee;
+	height: 60px;
+	position: relative;
+}
+:local .userAllListBox img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	float: left;
+	margin-left: -70px;
+}
+:local .userAllListBox p{
+	margin-top: 9px;
+}
+:local .userAllListBox span{
+	position: absolute;
+	right: 20px;
+	top: 42px;
+}
