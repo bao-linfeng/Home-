@@ -1,7 +1,4 @@
 var webpack = require('webpack');
-var path = require('path');
-var node_modules = path.resolve(__dirname, 'node_modules');
-var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 
 // css 单独打包，使用该插件后就不需要配置style-loader了
 // 本来是内联在最终的网页里，现在通过外联方式，可以在/dist文件夹下找到单独的css文件
@@ -15,11 +12,10 @@ var config = {
     },
     resolve: {
         alias: {
-          'react': pathToReact
+
         }
     },
     module:{
-        noParse: [pathToReact],
         //loaders加载器
         loaders:[
             {
