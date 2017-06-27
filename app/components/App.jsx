@@ -10,6 +10,12 @@ import AlbumPublish from './AlbumPublish.jsx';
 import UserManage from './UserManage.jsx';
 import UserNewManage from './UserNewManage.jsx';
 import UserInfo from './UserInfo.jsx';
+import AdminManage from './AdminManage.jsx';
+import CreateAdmin from './CreateAdmin.jsx';
+import AdminRootManage from './AdminRootManage.jsx';
+import AdminRootCreateManage from './AdminRootCreateManage.jsx';
+import H5ActivityManage from './H5ActivityManage.jsx';
+import H5ActivityAddManage from './H5ActivityAddManage.jsx';
 import $ from 'jquery';
 
 const url='https://api.github.com/users/octocat/gists';
@@ -18,7 +24,8 @@ class App extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            leftListState:'/'
+            leftListState:'/',
+            adminState:false
         };
     }
 
@@ -51,6 +58,10 @@ class App extends React.Component{
         this.setState({leftListState:e.target.href.substring(21)})
     }
 
+    handleAdminToggle(){
+        this.setState({adminState:!this.state.adminState})
+    }
+
 	render(){
 	    return (
         <Router>
@@ -70,7 +81,7 @@ class App extends React.Component{
                                         <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/userManage" className={this.state.leftListState == "/userManage" ? style.active : null}>用户管理</Link></li>
                                         <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/AlbumPublish" className={this.state.leftListState == "/AlbumPublish" ? style.active : null}>相册发布</Link></li>
                                         <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/AlbumManage" className={this.state.leftListState == "/AlbumManage" ? style.active : null}>相册管理</Link></li>
-                                        <li><a href="">H5活动管理</a></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/H5ActivityManage" className={this.state.leftListState == "/H5ActivityManage" ? style.active : null}>H5活动管理</Link></li>
                                         <li><a href="">微习惯管理</a></li>
                                         <li><a href="">早安问候管理</a></li>
                                     </ul>
@@ -86,7 +97,16 @@ class App extends React.Component{
                             }
 
                         </li>
-                        <li><a href=""><i className="fa fa-user"></i>管理员</a></li>
+                        <li>
+                            <a onClick={(e)=>this.handleAdminToggle(e)}><i className="fa fa-user"></i>管理员</a>
+                            {
+                                this.state.adminState ? null :
+                                    <ul className={style.adminNavListBox}>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/adminManage" className={this.state.leftListState == "/adminManage" ? style.active : null}>账号管理</Link></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="/adminRootManage" className={this.state.leftListState == "/adminRootManage" ? style.active : null}>账号权限管理</Link></li>
+                                    </ul>
+                            }
+                        </li>
                         <li>
                             <a onClick={(e)=>this.handleFinanceToggle(e)}><i className="fa fa-money"></i>财务</a>
                             {
@@ -125,6 +145,12 @@ class App extends React.Component{
                 <Route path="/userManage" exact component={UserManage} />
                 <Route path="/userNewManage" exact component={UserNewManage} />
                 <Route path="/userInfo" exact component={UserInfo} />
+                <Route path="/adminManage" exact component={AdminManage} />
+                <Route path="/adminManage:createAdmin" exact component={CreateAdmin} />
+                <Route path="/adminRootManage" exact component={AdminRootManage} />
+                <Route path="/adminRootManage:createAdminRoot" exact component={AdminRootCreateManage} />
+                <Route path="/h5ActivityManage" exact component={H5ActivityManage} />
+                <Route path="/h5ActivityAddManage" exact component={H5ActivityAddManage} />
             </div>
         </Router>
 	    )

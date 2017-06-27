@@ -5,7 +5,6 @@
 	position: relative;
 	background: #ddd;
 	color: #9096A6;
-	overflow-y: scroll;
 }
 :local .adminLeftBox{
 	position: fixed;

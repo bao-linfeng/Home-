@@ -1,10 +1,13 @@
 :local .adminContentBox{
-	margin: 156px 0 0 0;
-	float: left;
 	position: absolute;
+	top: 156px;
 	right: 0;
+	bottom: 0;
 	left: 240px;
 	background: #fff;
+	font-size: 14px;
+	color: #545454;
+	overflow-y: scroll;
 }
 /*按钮*/
 :local .btn{
@@ -29,10 +32,10 @@
 /*多选按钮、单选按钮*/
 .checkbox{width:300px;height:35px;line-height:35px;}
 .checkbox label {font-size:12px;cursor:pointer;}
-.checkbox i {font-size:12px;font-style:normal;display:inline-block;width:12px;height:12px;text-align:center;line-height:12px;color:#fff;vertical-align:middle;margin:-2px 2px 1px 0px;border:#2489c5 1px solid;}
+.checkbox i {font-size:12px;font-style:normal;display:inline-block;width:12px;height:12px;text-align:center;line-height:12px;color:#fff;vertical-align:middle;margin:-2px 2px 1px 0px;border:#2EA56B 1px solid;}
 .checkbox input[type="checkbox"],.checkbox input[type="radio"] {display:none;}
 .checkbox input[type="radio"] + i {border-radius:7px;}
-.checkbox input[type="checkbox"]:checked + i,.checkbox input[type="radio"]:checked + i {background:#2489c5;}
+.checkbox input[type="checkbox"]:checked + i,.checkbox input[type="radio"]:checked + i {background:#2EA56B;}
 .checkbox input[type="checkbox"]:disabled + i,.checkbox input[type="radio"]:disabled + i {border-color:#ccc;}
 .checkbox input[type="checkbox"]:checked:disabled + i,.checkbox input[type="radio"]:checked:disabled + i {background:#ccc;}
 
@@ -53,14 +56,14 @@
 	color: #999;
 }
 :local .pendingStatus a:hover{
-	border-bottom: 3px solid #2489c5;
+	border-bottom: 3px solid #2EA56B;
 }
 :local .pendingStatus span{
 	float: right;
 	margin-top: 8px;
 }
 :local .highLight{
-	border-bottom: 3px solid #2489c5;
+	border-bottom: 3px solid #2EA56B;
 }
 /* 待审核 */
 :local .pendingList{

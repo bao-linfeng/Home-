@@ -1,0 +1,190 @@
+:local .h5ActivityManageBox{
+	position: absolute;
+	top: 156px;
+	right: 0;
+	bottom: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+	overflow-y: scroll;
+}
+:local .h5ActivityTitleManageBox{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-bottom: 1px solid #eee;
+}
+:local .h5ActivityTitleManageBox a{
+	display: block;
+	width: 100px;
+	text-align: center;
+	color: #545454;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+:local .h5ActivityTitleManageBox a:hover{
+	border-bottom: 3px solid #2EA56B;
+}
+:local .h5ActivityTitleManageBox a.active{
+	border-bottom: 3px solid #2EA56B;
+}
+
+/*副标题*/
+:local .h5ActivitySubheadManageBox{
+	color: #A9AAB0;
+	font-size: 13px;
+	overflow: hidden;
+	text-align: left;
+	width: 100%;
+	border-bottom: 1px solid #E8E8EA;
+	padding: 10px 0;
+}
+:local .h5ActivitySubheadManageBox span{
+	width: 20%;
+	display: block;
+	float: left;
+	word-wrap:break-word ;
+}
+:local .h5ActivitySubheadManageBox span.firstChild{
+	text-indent: 20px;
+}
+:local .h5ActivitySubheadManageBox i{
+	margin-right: 10px;
+	font-size: 20px;
+	color: #8B8B8B;
+	cursor: pointer;
+}
+:local .h5ActivitySubheadManageBox i:hover{
+	color: #60B9A7;
+}
+:local .h5ActivityListManageBox{
+	color: #555;
+	padding: 20px 0;
+}
+:local .h5ActivityListManageBox h3{
+	color: #545454;
+	font-size: 16px;
+	font-weight: normal;
+	margin-bottom: 5px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+:local .h5ActivityListManageBox p{
+	color: #A1A1A1;
+	font-size: 13px;
+	margin-left: 20px;
+	text-indent: 0;
+	height: 32px;
+	overflow: hidden;
+}
+
+/*添加h5活动*/
+:local .h5ActivityAddBox{
+	padding: 20px;
+}
+:local .btn{
+	margin-left: 80px;
+	width: 183px;
+	height: 35px;
+	border-radius: 5px;
+	line-height: 35px;
+	text-align: center;
+	background: #2EA56B;
+	display: block;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+:local .disabled{
+	background: #eee;
+}
+:local .h5ActivityAddInputGroup{
+	padding-left: 80px;
+	margin-bottom: 20px;
+}
+:local .h5ActivityAddInputGroup label{
+	width: 80px;
+	float: left;
+	display: block;
+	margin-left: -80px;
+	margin-top: 10px;
+}
+:local .h5ActivityAddInputGroup input{
+	width: 280px;
+	display: block;
+	border: 1px solid #eee;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+	outline: none;
+	padding: 0 10px;
+}
+
+:local .h5ActivityAddInputGroupS input{
+	width: 95%;
+}
+:local .h5ActivityAddInputGroup textarea{
+	width: 95%;
+	display: block;
+	border: 1px solid #eee;
+	height: 100px;
+	border-radius: 5px;
+	outline: none;
+	padding: 10px;
+}
+
+/*必填*/
+:local .required input{
+	border: 1px solid #f00;
+}
+:local .required textarea{
+	border: 1px solid #f00;
+}
+
+/*删除*/
+:local .h5ActivityDeleteBoxBg{
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.6);
+	z-index: 30;
+	font-family: PingFangSC-Regular;
+}
+:local .h5ActivityDeleteBox{
+	width: 360px;
+	height: 212px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -106px;
+	margin-left: -180px;
+	background: #fff;
+	color: #545454;
+	text-align: center;
+}
+:local .h5ActivityDeleteBox p{
+	margin-top: 20px;
+	font-size: 18px;
+}
+:local .h5ActivityDeleteBox span{
+	padding: 30px 0 50px 0;
+	display: block;
+	border-bottom: 1px solid #eee;
+}
+:local .h5ActivityDeleteBox a{
+	float: left;
+	margin-top: 15px;
+	margin-left: 13px;
+	width: 160px;
+}
+:local .h5ActivityDeleteBox i{
+	font-size: 18px;
+	font-weight: normal;
+	margin:10px 10px 0 0;
+}

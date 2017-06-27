@@ -1,12 +1,13 @@
 :local .albumPublishBox{
-	margin: 156px 0 0 0;
-	float: left;
 	position: absolute;
+	top: 156px;
 	right: 0;
+	bottom: 0;
 	left: 240px;
 	background: #fff;
 	font-size: 14px;
 	color: #545454;
+	overflow-y: scroll;
 }
 /*标题*/
 :local .albumPublishTitleBox{
@@ -40,10 +41,10 @@
 /*多选按钮、单选按钮*/
 :local .checkbox{width:300px;height:35px;line-height:35px;margin-right: 20px;cursor: pointer;}
 :local .checkbox label {font-size:12px;cursor:pointer;}
-:local .checkbox i {font-size:12px;font-style:normal;display:inline-block;width:12px;height:12px;text-align:center;line-height:12px;color:#fff;vertical-align:middle;margin:-2px 2px 1px 0px;border:#2489c5 1px solid;}
+:local .checkbox i {font-size:12px;font-style:normal;display:inline-block;width:12px;height:12px;text-align:center;line-height:12px;color:#fff;vertical-align:middle;margin:-2px 2px 1px 0px;border:#2EA56B 1px solid;}
 :local .checkbox input[type="checkbox"],:local .checkbox input[type="radio"] {display:none;}
 :local .checkbox input[type="radio"] + i {border-radius:7px;}
-:local .checkbox input[type="checkbox"]:checked + i,:local .checkbox input[type="radio"]:checked + i {background:#2489c5;}
+:local .checkbox input[type="checkbox"]:checked + i,:local .checkbox input[type="radio"]:checked + i {background:#2EA56B;}
 :local .checkbox input[type="checkbox"]:disabled + i,:local .checkbox input[type="radio"]:disabled + i {border-color:#ccc;}
 :local .checkbox input[type="checkbox"]:checked:disabled + i,:local .checkbox input[type="radio"]:checked:disabled + i {background:#ccc;}
 
@@ -75,7 +76,7 @@
 	height:0;
 	border-style:solid;
 	border-width:5px 5px 0 5px;
-	border-color:#2489c5 transparent transparent transparent;
+	border-color:#2EA56B transparent transparent transparent;
 	content:"";
 } 
 .list{

@@ -1,0 +1,116 @@
+:local .adminRootManageBox{
+	position: absolute;
+	top: 156px;
+	right: 0;
+	bottom: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+	overflow-y: scroll;
+}
+:local .adminRootManageTitleBox{
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-bottom: 1px solid #eee;
+}
+:local .adminRootManageTitleBox a{
+	display: block;
+	width: 100px;
+	text-align: center;
+	color: #545454;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+}
+:local .adminRootManageTitleBox a:hover{
+	border-bottom: 3px solid #2EA56B;
+}
+:local .adminRootManageTitleBox a.active{
+	border-bottom: 3px solid #2EA56B;
+}
+
+/*副标题*/
+:local .adminRootManageSubheadBox{
+	color: #A9AAB0;
+	font-size: 13px;
+	overflow: hidden;
+	text-align: left;
+	width: 100%;
+	border-bottom: 1px solid #E8E8EA;
+
+}
+:local .adminRootManageSubheadBox span{
+	width: 20%;
+	display: block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+}
+:local .adminRootManageSubheadBox span.firstChild{
+	text-indent: 20px;
+}
+:local .adminRootManageSubheadBox i{
+	margin-right: 10px;
+	font-size: 20px;
+	color: #8B8B8B;
+	cursor: pointer;
+}
+:local .adminRootManageSubheadBox i:hover{
+	color: #60B9A7;
+}
+:local .adminRootManageListBox{
+	color: #555;
+	padding: 20px 0;
+}
+
+/*创建账号类型*/
+:local .adminRootCreateManageBox{
+	padding:20px;
+}
+:local .adminRootCreateManageBox>a{
+	margin-left: 80px;
+	width: 183px;
+	height: 35px;
+	border: none;
+	line-height: 35px;
+	text-align: center;
+	color: #fff;
+	background: #2EA56B;
+	border-radius: 5px;
+	display: block;
+}
+:local .adminRootCreateInputGroup{
+	padding-left:80px;
+	margin-bottom: 20px;
+}
+:local .adminRootCreateInputGroup>label{
+	width: 80px;
+	float: left;
+	margin-left: -80px;
+	margin-top: 10px;
+}
+:local .adminRootCreateInputGroup>input{
+	width: 280px;
+	height: 35px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	line-height: 35px;
+	padding:0 10px;
+	outline: none;
+}
+:local .adminRootListBox{
+	padding:15px;
+	background: #f3f3f3;
+	overflow: hidden;
+}
+:local .adminRootList{
+	width: 200px;
+	float: left;
+}
+:local .adminRootList>label{
+	width: 200px;
+	float: left;
+	display: block;
+}
