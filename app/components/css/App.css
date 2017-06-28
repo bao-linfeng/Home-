@@ -20,6 +20,11 @@
 	display: block;
 	border-bottom: 1px solid #9096A6;
 }
+:local .userInfo img{
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+}
 :local .userInfo span{
 	text-align: center;
 	display: block;
@@ -105,6 +110,7 @@
 	width: 28px;
 	height: 28px;
 	float: left;
+	border-radius: 50%;
 }
 :local .userInfoToglgle span{
 	margin:5px 5px 0 5px;

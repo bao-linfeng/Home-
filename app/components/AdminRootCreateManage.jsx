@@ -7,12 +7,17 @@ class AdminRootCreateManage extends React.Component{
         super(props);
         this.state={
             userInfoState:false,
-            checked:true
+            checked:true,
+            name:''
         };
     }
 
     handleCheckBoxChange(){
         this.setState({checked:!this.state.checked});
+    }
+
+    handleInputChange(e){
+        this.setState({name:e.target.value});
     }
 
 	render(){
@@ -27,9 +32,9 @@ class AdminRootCreateManage extends React.Component{
                     <Link to="/adminRootManage:createAdminRoot" className={style.active}>创建账号类型</Link>
                 </div>
                 <form className={style.adminRootCreateManageBox}>
-                    <div className={style.adminRootCreateInputGroup}>
+                    <div className={style.adminRootCreateInputGroup+' '+(this.state.name ? '' : style.required)}>
                         <label>账号类型</label>
-                        <input type="text" placeholder="请输入名称" />
+                        <input type="text" placeholder="请输入名称" value={this.state.name} onChange={(e)=>this.handleInputChange(e)} />
                     </div>
                     <div className={style.adminRootCreateInputGroup}>
                         <label>配置权限</label>
@@ -38,7 +43,7 @@ class AdminRootCreateManage extends React.Component{
                                 {
                                     manage.map(function(item,index){
                                         return (
-                                             <label className="checkbox" key={index}><input type="checkbox" name="adminRoot" /><i>✓</i>{item}</label>
+                                             <label className="checkbox" key={index}><input type="checkbox" name="adminRoot" defaultChecked="true" /><i>✓</i>{item}</label>
                                     )})
                                 }
                             </div>
@@ -68,7 +73,7 @@ class AdminRootCreateManage extends React.Component{
                             </div>
                         </div>
                     </div>
-                    <a className={style.btn}>保存</a>
+                    <a className={style.btn+' '+(this.state.name ? '' : style.disabled)}>保存</a>
                 </form>
             </div>
 	    )

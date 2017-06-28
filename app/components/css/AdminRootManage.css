@@ -69,7 +69,7 @@
 :local .adminRootCreateManageBox{
 	padding:20px;
 }
-:local .adminRootCreateManageBox>a{
+:local .btn{
 	margin-left: 80px;
 	width: 183px;
 	height: 35px;
@@ -80,6 +80,11 @@
 	background: #2EA56B;
 	border-radius: 5px;
 	display: block;
+	cursor: pointer;
+}
+:local .disabled{
+	background: #eee;
+	cursor: default;
 }
 :local .adminRootCreateInputGroup{
 	padding-left:80px;
@@ -99,6 +104,9 @@
 	line-height: 35px;
 	padding:0 10px;
 	outline: none;
+}
+:local .required>input{
+	border-color: #f00;
 }
 :local .adminRootListBox{
 	padding:15px;

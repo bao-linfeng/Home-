@@ -1,5 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 import style from './css/App.css';
 import AdminIndex from './AdminIndex.jsx';
 import AlbumManage from './AlbumManage.jsx';
@@ -16,6 +18,8 @@ import AdminRootManage from './AdminRootManage.jsx';
 import AdminRootCreateManage from './AdminRootCreateManage.jsx';
 import H5ActivityManage from './H5ActivityManage.jsx';
 import H5ActivityAddManage from './H5ActivityAddManage.jsx';
+import AppVersionManage from './AppVersionManage.jsx';
+import AppLogTree from './AppLogTree.jsx';
 import $ from 'jquery';
 
 const url='https://api.github.com/users/octocat/gists';
@@ -25,15 +29,31 @@ class App extends React.Component{
         super(props);
         this.state={
             leftListState:'/',
-            adminState:false
+            adminState:false,
+            dataSource:''
         };
     }
 
     componentDidMount(){
-        $.get(url, function(result) {
-            var lastGist = result[0];
-            this.setState({username: lastGist.owner.login});
-        }.bind(this));
+        // $.get(url, function(result) {
+        //     var lastGist = result[0];
+        //     this.setState({username: lastGist.owner.login});
+        // }.bind(this));
+
+        fetch('http://gank.io/api/search/query/listview/category/福利/count/10/page/1')//请求地址  
+            .then((response) => response.json())//取数据  
+            .then((responseText) => {//处理数据  
+                //通过setState()方法重新渲染界面  
+                this.setState({    
+                    //设置数据源刷新界面  
+                    dataSource: responseText.results[0].url,
+                    username: responseText.results[0].who
+                })  
+  
+            })  
+            .catch((error) => {  
+                console.warn(error);  
+            }); 
     }
 
     componentWillUnmount(){}
@@ -68,7 +88,7 @@ class App extends React.Component{
 	        <div className={style.adminBox}>
                 <div className={style.adminLeftBox}>
                     <Link to="/userInfo" className={style.userInfo}>
-                        <img src="./images/photo.png" alt="头像" />
+                        <img src={this.state.dataSource ? this.state.dataSource : './images/photo.png'} alt="头像" />
                         <span>{this.state.username}</span>
                     </Link>
                     <ul className={style.adminNavBox}>
@@ -92,7 +112,7 @@ class App extends React.Component{
                             {
                                 this.state.developer ? null :
                                     <ul className={style.adminNavListBox}>
-                                        <li><a href="">App版本管理</a></li>
+                                        <li onClick={(e) => this.handleLeftListActive(e)}><Link to="appVersionManage" className={this.state.leftListState == "/appVersionManage" ? style.active : null}>App版本管理</Link></li>
                                     </ul>
                             }
 
@@ -126,7 +146,7 @@ class App extends React.Component{
                     <div className={style.adminTopUserBox}>
                         <img src="./images/logo.png" />
                         <ul className={style.userInfoToglgle}>
-                            <li id="userInfoToglgle" onClick={(e)=>this.handleLogoutToggle(e)}><img src="./images/user.png" className={style.userPhoto} /><span>{this.state.username}</span></li>
+                            <li id="userInfoToglgle" onClick={(e)=>this.handleLogoutToggle(e)}><img src={this.state.dataSource ? this.state.dataSource : './images/photo.png'} className={style.userPhoto} /><span>{this.state.username}</span></li>
                             {
                                 !this.state.logoutState ? null : <li id="signOut"><Link to="/login"><i className="fa fa-sign-out"></i>退出</Link></li>
                             }
@@ -151,6 +171,8 @@ class App extends React.Component{
                 <Route path="/adminRootManage:createAdminRoot" exact component={AdminRootCreateManage} />
                 <Route path="/h5ActivityManage" exact component={H5ActivityManage} />
                 <Route path="/h5ActivityAddManage" exact component={H5ActivityAddManage} />
+                <Route path="/appVersionManage" exact component={AppVersionManage} />
+                <Route path="/appLogTree" exact component={AppLogTree} />
             </div>
         </Router>
 	    )

@@ -1,0 +1,64 @@
+:local .appVersionManageBox{
+	position: absolute;
+	top: 156px;
+	right: 0;
+	bottom: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+	overflow-y: scroll;
+}
+:local .appVersionManageTitleBox{
+	text-align: center;
+	border-bottom: 1px solid #eee;
+	overflow: hidden;
+}
+:local .appVersionManageTitleBox span{
+	padding: 10px 0;
+	display: block;
+	float: left;
+	width: 15%;
+}
+:local .appVersionManageTitleBox span.link{
+	width: 55%;
+}
+:local .appVersionManageTitleBox img{
+	width: 62px;
+	height: 62px;
+}
+:local .appVersionManageTitleBox input[type=text]{
+	width: 80%;
+	height: 35px;
+	border: 1px solid #eee;
+	border-radius: 5px 0 0 5px;
+	padding: 0 10px;
+	outline: none;
+	float: left;
+	margin-top: 23px;
+}
+:local .btn{
+	width: 15%;
+	height: 37px;
+	border: none;
+	border-radius: 0 5px 5px 0;
+	text-align: center;
+	background: #2EA56B;
+	color: #fff;
+	outline: none;
+	float: left;
+	margin-top: 23px;
+}
+:local .LinkTo{
+	width: 100px;
+	height: 37px;
+	line-height: 37px;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+	background: #2EA56B;
+	color: #fff;
+	outline: none;
+	display: inline-block;
+	margin-top: 23px;
+}
