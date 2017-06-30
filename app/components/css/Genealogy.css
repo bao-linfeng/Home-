@@ -1,0 +1,108 @@
+:local .genealogyListBox{
+	position: absolute;
+	top: 156px;
+	right: 0;
+	bottom: 0;
+	left: 240px;
+	background: #fff;
+	font-size: 14px;
+	color: #545454;
+	overflow-y: scroll;
+	text-align: center;
+}
+:local .genealogyListDetailsBox{
+	width: 150px;
+	height: 100%;
+	border: 1px solid #eee;
+	float: left;
+}
+:local .genealogyListTitleBox{
+	width: 100%;
+	height: 200px;
+	border-bottom: 1px dashed #eee;
+	float: left;
+	text-align: center;
+	font-size: 20px;
+}
+:local .genealogyListTitleBox span{
+	width: 22px;
+	display: inline-block;
+	height: 133px;
+	padding-top: 67px;
+}
+/**/
+:local .genealogyListUserBox{
+	width: 140px;
+	padding: 20px 5px 0 5px;
+	height: 300px;
+	float: left;
+}
+/*妻子信息*/
+:local .wifeInfoBox{
+	width: 60%;
+	height: 300px;
+	float: left;
+}
+:local .wifeInfoBox>span{
+	font-size: 20px;
+}
+:local .genealogyListWifeInfoBox{
+	width: 33.33%;
+	font-size: 10px;
+	overflow: hidden;
+	height: 278px;
+}
+:local .genealogyListWifeInfoBox span{
+	font-size: 20px;
+}
+:local .genealogyListWifeInfoBox p{
+	float: left;
+	width: 50%;
+}
+/**/
+:local .selfInfoBox{
+	width: 30%;
+	height: 300px;
+	float: left;
+}
+:local .selfInfoBox span{
+	display: block;
+	font-size: 20px;
+	font-weight: bold;
+}
+:local .selfInfoBox p{
+	font-size: 10px;
+	width: 50%;
+	float: left;
+}
+/*父亲*/
+:local .parentInfoBox{
+	width: 10%;
+	height: 300px;
+	float: left;
+	font-size: 10px;
+}
+/*子女信息*/
+:local .childrenInfoBox{
+	width: 140px;
+	padding: 0 5px;
+	float: left;
+}
+:local .childrenGirlInfoBox{
+	width: 100px;
+	float: left;
+}
+:local .childrenGirlInfoBox>p{
+	width: 20%;
+	font-size: 14px;
+	float: right;
+}
+:local .childrenInfoDeyailsBox{
+	width: 20px;
+	float: right;
+	font-weight: bold;
+}
+:local .childrenInfoDeyailsBox label{
+	margin-top: 20px;
+	display: block;
+}

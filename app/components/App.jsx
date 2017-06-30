@@ -20,6 +20,7 @@ import H5ActivityManage from './H5ActivityManage.jsx';
 import H5ActivityAddManage from './H5ActivityAddManage.jsx';
 import AppVersionManage from './AppVersionManage.jsx';
 import AppLogTree from './AppLogTree.jsx';
+import GenealogyList from './GenealogyList.jsx';
 import $ from 'jquery';
 
 const url='https://api.github.com/users/octocat/gists';
@@ -173,6 +174,7 @@ class App extends React.Component{
                 <Route path="/h5ActivityAddManage" exact component={H5ActivityAddManage} />
                 <Route path="/appVersionManage" exact component={AppVersionManage} />
                 <Route path="/appLogTree" exact component={AppLogTree} />
+                <Route path="/genealogyList" exact component={GenealogyList} />
             </div>
         </Router>
 	    )
